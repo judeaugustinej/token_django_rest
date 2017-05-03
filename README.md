@@ -28,5 +28,24 @@ curl -X POST -d "username=<username>&password=<password>" http://localhost:8000/
 curl -H "Authorization: JWT <token>" http://127.0.0.1:8000/api/activity/?format=json
 ```
 
+### Heroku deployment
+
+* Edit setting.py for postgresdb support
+
+* Run the migrations
+```
+heroku run python manage.py migrate
+```
+
+* Attach postgresDB
+```
+heroku addons:create heroku-postgresql:hobby-dev
+```
+
+* Public URL
+```
+https://dj-rest-demo.herokuapp.com/api/activity/
+```
+
 ### Reference
 * [How to make a full fledged REST API with Django OAuth Toolkit](https://www.youtube.com/watch?v=M6Ud3qC2tTk)
