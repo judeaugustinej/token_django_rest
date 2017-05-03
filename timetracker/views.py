@@ -1,3 +1,24 @@
-from django.shortcuts import render
+from .models import Activity, TimeEntry
+from .serializers import ActivitySerializer, TimeEntrySerializer
 
-# Create your views here.
+from rest_framework import generics
+
+
+class ActivityList(generics.ListCreateAPIView):
+    queryset = Activity.objects.all()
+    serializer_class = ActivitySerializer
+
+
+class ActivityDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Activity.objects.all()
+    serializer_class = ActivitySerializer
+
+
+class TimeEntryList(generics.RetrieveUpdateDestroyAPIView):
+    queryset = TimeEntry.objects.all()
+    serializer_class = TimeEntrySerializer
+
+
+class TimeEntryDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = TimeEntry.objects.all()
+    serializer_class = TimeEntrySerializer
