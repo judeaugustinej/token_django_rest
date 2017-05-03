@@ -42,10 +42,10 @@ heroku run python manage.py migrate
 heroku addons:create heroku-postgresql:hobby-dev
 ```
 
-* Public URL
-```
-https://dj-rest-demo.herokuapp.com/api/activity/
-```
+### Hosting
+
+This application can be found on **Heroku** https://dj-rest-demo.herokuapp.com/api/activity/
+
 
 ### Reference
 * [How to make a full fledged REST API with Django OAuth Toolkit](https://www.youtube.com/watch?v=M6Ud3qC2tTk)
